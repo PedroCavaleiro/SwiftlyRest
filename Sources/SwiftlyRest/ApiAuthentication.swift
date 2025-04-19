@@ -28,7 +28,7 @@ public class ApiAuthentication: ApiAuthenticationInterface {
     
     public var headers: [String: String] = [:]
     
-    init(
+    public init(
         deviceUuid: String,
         appId: String,
         appKey: String,
