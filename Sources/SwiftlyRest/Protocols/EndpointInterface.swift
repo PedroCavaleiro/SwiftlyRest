@@ -16,7 +16,8 @@ public protocol EndpointInterface {
     /// *NOTE: Do not append nor prepend the foward slash*
     ///
     /// - Parameter version: The version of the endpoint as string
-    func withVersion( _ version: String)
+    @discardableResult
+    func withVersion( _ version: String) -> Endpoint
     
     /// Adds a version to the endpoint
     /// This can be added using the `add(path: String)` method but it's better for readability
@@ -24,27 +25,31 @@ public protocol EndpointInterface {
     ///
     /// - Parameter version: The version of the endpoint as string
     /// - Parameter T: The type of the enumerator containing the version
-    func withVersion<T: StringRepresentable>(_ version: T)
+    @discardableResult
+    func withVersion<T: StringRepresentable>(_ version: T) -> Endpoint where T : StringRepresentable
     
     /// Adds a controller to the endpoint
     /// This can be added using the `withPath(_ path: String)` method but it's better for readability
     /// *NOTE: Do not append nor prepend the foward slash*
     ///
     /// - Parameter controller: The controller of the endpoint, usually a controller contains muitiple endpoints
-    func withController(_ controller: String)
+    @discardableResult
+    func withController(_ controller: String) -> Endpoint
     
     /// Adds a controller to the endpoint
     /// This can be added using the `withPath(_ path: String)` method but it's better for readability
     ///
     /// - Parameter controller: The controller of the endpoint, usually a controller contains muitiple endpoints
     /// - Parameter T: The type of the enumerator containing the controller
-    func withController<T: StringRepresentable>(_ controller: T)
+    @discardableResult
+    func withController<T: StringRepresentable>(_ controller: T) -> Endpoint where T : StringRepresentable
     
     /// Adds a path to the endpoint
     /// *NOTE: Do not append nor prepend the foward slash*
     ///
     /// - Parameter path: The path to the endpoint
-    func withPath(_ path: String)
+    @discardableResult
+    func withPath(_ path: String) -> Endpoint
     
     /// Adds a path to the endpoint
     /// The path can contain values like `{id}` where `{id}` will be replaced by the key in the dictionary `parameters`
@@ -52,12 +57,14 @@ public protocol EndpointInterface {
     ///
     /// - Parameter path: The path to the endpoint
     /// - Parameter parameters: The dictionary with the parameters to replace
-    func withPath(_ path: String, parameters: [String: String])
+    @discardableResult
+    func withPath(_ path: String, parameters: [String: String]) -> Endpoint
     
     /// Adds query parameters to the url
     ///
     /// - Parameter query: The dictionary of query values to add
-    func withQuery(_ query: [String: String])
+    @discardableResult
+    func withQuery(_ query: [String: String]) -> Endpoint
     
     /// Builds the URL
     ///
