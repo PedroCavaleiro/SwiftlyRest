@@ -90,6 +90,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - headers: Extra headers to send to the server
     ///  - T: The type of the response, this will be used to parse from the server
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     public func get<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
@@ -106,6 +107,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     ///  - U: The type of the body
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     public func post<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
         body: U,
@@ -123,6 +125,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     ///  - U: The type of the body
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     public func patch<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
         body: U,
@@ -140,6 +143,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     ///  - U: The type of the body
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     public func put<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
         body: U,
@@ -155,6 +159,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - headers: Extra headers to send to the server
     ///  - T: The type of the response, this will be used to parse from the server
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     public func post<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
@@ -192,6 +197,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - body: The body of the request, can be nil
     ///  - responseType: The type of the response to parse from the server response
     ///  - headers: The extra headers to send to the server
+    @available(iOS 15.0, *)
     private func makeRequest<T: Codable, U: Codable>(
         endpoint: EndpointInterface,
         method: HTTPMethod,

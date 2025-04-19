@@ -38,6 +38,7 @@ protocol SwiftlyRestInterface {
     ///  - headers: Extra headers to send to the server
     ///  - T: The type of the response, this will be used to parse from the server
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     func get<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String]
@@ -52,6 +53,7 @@ protocol SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     ///  - U: The type of the body
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     func post<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
         body: U,
@@ -67,6 +69,7 @@ protocol SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     ///  - U: The type of the body
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     func patch<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
         body: U,
@@ -82,6 +85,7 @@ protocol SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     ///  - U: The type of the body
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     func put<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
         body: U,
@@ -95,6 +99,7 @@ protocol SwiftlyRestInterface {
     ///  - headers: Extra headers to send to the server
     ///  - T: The type of the response, this will be used to parse from the server
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
     func post<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String]
