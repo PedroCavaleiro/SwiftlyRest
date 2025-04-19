@@ -13,7 +13,7 @@ import CryptoKit
 ///
 /// Check this repository for more information
 /// https://github.com/PedroCavaleiro/api-app-authentication
-@available(macOS 10.15, *)
+@available(macOS 10.15, iOS 13.0, *)
 public class ApiAuthentication: ApiAuthenticationInterface {
     
     private enum AuthenticationHeader: String {

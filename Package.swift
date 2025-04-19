@@ -5,6 +5,13 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftlyRest",
+    platforms: [
+        .iOS(.v15),
+        .tvOS(.v15),
+        .macOS(.v13),
+        .visionOS(.v1),
+        .watchOS(.v6)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
