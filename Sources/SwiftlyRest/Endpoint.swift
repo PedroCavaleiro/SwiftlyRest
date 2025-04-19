@@ -10,7 +10,11 @@ import Foundation
 public class Endpoint: EndpointInterface {
     
     
-    public var url: String = ""
+    public var url: String
+    
+    public init(url: String = "") {
+        self.url = url
+    }
     
     /// Adds a version to the endpoint
     /// This can be added using the `withPath(_ path: String)` method but it's better for readability
