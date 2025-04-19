@@ -94,7 +94,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     public func get<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
-    ) async -> Result<T, Error> {
+    ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .get, body: Optional<Data>.none, responseType: T.self, headers: headers)
     }
     
@@ -112,7 +112,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         body: U,
         headers: [String: String] = [:]
-    ) async -> Result<T, Error> {
+    ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .post, body: body, responseType: T.self, headers: headers)
     }
     
@@ -130,7 +130,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         body: U,
         headers: [String: String] = [:]
-    ) async -> Result<T, Error> {
+    ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .patch, body: body, responseType: T.self, headers: headers)
     }
     
@@ -148,7 +148,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         body: U,
         headers: [String: String] = [:]
-    ) async -> Result<T, Error> {
+    ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .put, body: body, responseType: T.self, headers: headers)
     }
     
@@ -163,7 +163,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     public func post<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
-    ) async -> Result<T, Error> {
+    ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .post, body: Optional<Data>.none, responseType: T.self, headers: headers)
     }
     
@@ -204,7 +204,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         body: U? = nil,
         responseType: T.Type,
         headers: [String: String] = [:]
-    ) async -> Result<T, Error> {
+    ) async -> Result<T, SwiftlyRestError> {
         
         guard let endpointUrl = try? endpoint.build() else {
             writeLog("\(tag)[invalidURL] Failed to build the URL: \(endpoint.url)")

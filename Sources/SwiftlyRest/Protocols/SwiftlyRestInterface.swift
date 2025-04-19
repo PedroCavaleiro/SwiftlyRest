@@ -42,7 +42,7 @@ protocol SwiftlyRestInterface {
     func get<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String]
-    ) async -> Result<T, Error>
+    ) async -> Result<T, SwiftlyRestError>
     
     /// Performs a HTTP POST request
     ///
@@ -58,7 +58,7 @@ protocol SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         body: U,
         headers: [String: String]
-    ) async -> Result<T, Error>
+    ) async -> Result<T, SwiftlyRestError>
     
     /// Performs a HTTP PATCH request
     ///
@@ -74,7 +74,7 @@ protocol SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         body: U,
         headers: [String: String]
-    ) async -> Result<T, Error>
+    ) async -> Result<T, SwiftlyRestError>
     
     /// Performs a HTTP PUT request
     ///
@@ -90,7 +90,7 @@ protocol SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         body: U,
         headers: [String: String]
-    ) async -> Result<T, Error>
+    ) async -> Result<T, SwiftlyRestError>
     
     /// Performs a HTTP DELETE request
     ///
@@ -103,7 +103,7 @@ protocol SwiftlyRestInterface {
     func post<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String]
-    ) async -> Result<T, Error>
+    ) async -> Result<T, SwiftlyRestError>
     
     
     /// Generates the headers for a request
