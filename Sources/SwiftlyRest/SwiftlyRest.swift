@@ -40,7 +40,7 @@ public enum RetryableCodes: Int {
 @available(macOS 12.0, *)
 public class SwiftlyRest: SwiftlyRestInterface {
     
-    public static let shared = SwiftlyRest()
+    @MainActor public static let shared = SwiftlyRest()
     
     private var baseURL: URL?
     private var loggingEnabled: Bool = false
