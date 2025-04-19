@@ -7,21 +7,44 @@
 
 import Foundation
 
-public enum SwiftlyRestError: Error {
-    case invalidURL
-    case noResponse
-    case badRequest(message: String)
-    case unauthorized
-    case forbidden
-    case notFound
-    case internalServerError
-    case badGateway
-    case serviceUnavailable
-    case timeout
-    case unknown(code: Int, message: String)
+
+public enum SwiftlyRestError: Error, Equatable {
+    case invalidURL
+    case noResponse
+    case badRequest(message: String)
+    case unauthorized
+    case forbidden
+    case notFound
+    case internalServerError
+    case badGateway
+    case serviceUnavailable
+    case timeout
+    case unknown(code: Int, message: String)
+    
+    public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidURL, .invalidURL),
+             (.noResponse, .noResponse),
+             (.unauthorized, .unauthorized),
+             (.forbidden, .forbidden),
+             (.notFound, .notFound),
+             (.internalServerError, .internalServerError),
+             (.badGateway, .badGateway),
+             (.serviceUnavailable, .serviceUnavailable),
+             (.timeout, .timeout):
+            return true
+        case (.badRequest(let lhsMessage), .badRequest(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        case (.unknown(let lhsCode, let lhsMessage), .unknown(let rhsCode, let rhsMessage)):
+            return lhsCode == rhsCode && lhsMessage == rhsMessage
+        default:
+            return false
+        }
+    }
 }
 
-public enum HTTPMethod: String {
+
+public enum HTTPMethod: String, Equatable {
     case get    = "GET"
     case post   = "POST"
     case put    = "PUT"
@@ -29,7 +52,7 @@ public enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-public enum RetryableCodes: Int {
+public enum RetryableCodes: Int, Equatable {
     case internalServerError = 500
     case badGateway          = 502
     case serviceUnavailable  = 503
