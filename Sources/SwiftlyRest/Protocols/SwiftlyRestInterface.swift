@@ -100,7 +100,7 @@ protocol SwiftlyRestInterface {
     ///  - T: The type of the response, this will be used to parse from the server
     /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
     @available(iOS 15.0, *)
-    func post<T: Codable>(
+    func delete<T: Codable>(
         _ endpoint: EndpointInterface,
         headers: [String: String]
     ) async -> Result<T, SwiftlyRestError>
