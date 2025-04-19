@@ -9,38 +9,38 @@ import Foundation
 
 
 public enum SwiftlyRestError: Error, Equatable {
-    case invalidURL
-    case noResponse
-    case badRequest(message: String)
-    case unauthorized
-    case forbidden
-    case notFound
-    case internalServerError
-    case badGateway
-    case serviceUnavailable
-    case timeout
-    case unknown(code: Int, message: String)
-    
-    public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
-        switch (lhs, rhs) {
-        case (.invalidURL, .invalidURL),
-             (.noResponse, .noResponse),
-             (.unauthorized, .unauthorized),
-             (.forbidden, .forbidden),
-             (.notFound, .notFound),
-             (.internalServerError, .internalServerError),
-             (.badGateway, .badGateway),
-             (.serviceUnavailable, .serviceUnavailable),
-             (.timeout, .timeout):
-            return true
-        case (.badRequest(let lhsMessage), .badRequest(let rhsMessage)):
-            return lhsMessage == rhsMessage
-        case (.unknown(let lhsCode, let lhsMessage), .unknown(let rhsCode, let rhsMessage)):
-            return lhsCode == rhsCode && lhsMessage == rhsMessage
-        default:
-            return false
-        }
-    }
+    case invalidURL
+    case noResponse
+    case badRequest(message: String)
+    case unauthorized
+    case forbidden
+    case notFound
+    case internalServerError
+    case badGateway
+    case serviceUnavailable
+    case timeout
+    case unknown(code: Int, message: String)
+
+    public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidURL, .invalidURL),
+            (.noResponse, .noResponse),
+            (.unauthorized, .unauthorized),
+            (.forbidden, .forbidden),
+            (.notFound, .notFound),
+            (.internalServerError, .internalServerError),
+            (.badGateway, .badGateway),
+            (.serviceUnavailable, .serviceUnavailable),
+            (.timeout, .timeout):
+            return true
+        case (.badRequest(let lhsMessage), .badRequest(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        case (.unknown(let lhsCode, let lhsMessage), .unknown(let rhsCode, let rhsMessage)):
+            return lhsCode == rhsCode && lhsMessage == rhsMessage
+        default:
+            return false
+        }
+    }
 }
 
 
