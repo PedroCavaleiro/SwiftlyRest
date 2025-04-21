@@ -112,7 +112,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     /// - Parameters:
     ///  - token: The token to store, if null it will store the active token, if the active token is null it removes the stored token
     ///  - key: The Keychain key where to store the token
-    public func storeOnKeychain(jwt token: String? = nil, on key: String = "token") {
+    public func storeJwtOnKeychain(jwt token: String? = nil, on key: String = "token") {
         let keychain = KeychainSwift()
         if let token = token {
             keychain.set(token, forKey: key)
@@ -121,6 +121,15 @@ public class SwiftlyRest: SwiftlyRestInterface {
         } else {
             keychain.delete(key)
         }
+    }
+    
+    /// Loads the JWT stored in the keychain onto the JWT variable to use in the requests
+    ///
+    /// - Parameter key: The key where the token is stored
+    public func loadJwtFromKeychain(from key: String = "token") {
+        let keychain = KeychainSwift()
+        guard let token = keychain.get(key) else { return }
+        self.jwtToken = token
     }
     
     /// Performs a HTTP GET request
