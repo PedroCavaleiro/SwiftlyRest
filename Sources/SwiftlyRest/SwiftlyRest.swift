@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import KeychainSwift
 
 public enum SwiftlyRestError: Error, Equatable {
     case invalidURL
@@ -104,6 +104,23 @@ public class SwiftlyRest: SwiftlyRestInterface {
     /// - Parameter enabled: The state of the logging
     public func loggingEnabled(_ enabled: Bool) {
         self.loggingEnabled = enabled
+    }
+    
+    /// Stored the active jwt token on the platform if a jwt is passed that token will be stored instead
+    /// The jwt will be stored on the key *token* by default
+    ///
+    /// - Parameters:
+    ///  - token: The token to store, if null it will store the active token, if the active token is null it removes the stored token
+    ///  - key: The Keychain key where to store the token
+    public func storeOnKeychain(jwt token: String? = nil, on key: String = "token") {
+        let keychain = KeychainSwift()
+        if let token = token {
+            keychain.set(token, forKey: key)
+        } else if let token = self.jwtToken {
+            keychain.set(token, forKey: key)
+        } else {
+            keychain.delete(key)
+        }
     }
     
     /// Performs a HTTP GET request
