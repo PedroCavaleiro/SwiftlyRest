@@ -31,6 +31,14 @@ protocol SwiftlyRestInterface {
     /// - Parameter enabled: The state of the logging
     func loggingEnabled(_ enabled: Bool)
     
+    /// Stored the active jwt token on the platform if a jwt is passed that token will be stored instead
+    /// The jwt will be stored on the key *token* by default
+    ///
+    /// - Parameters:
+    ///  - token: The token to store, if null it will store the active token, if the active token is null it removes the stored token
+    ///  - key: The Keychain key where to store the token
+    func storeOnKeychain(jwt token: String?, on key: String)
+    
     /// Performs a HTTP GET request
     ///
     /// - Parameters:
