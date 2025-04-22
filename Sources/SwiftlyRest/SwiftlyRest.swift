@@ -107,7 +107,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     }
     
     /// Checks if the user is authenticated
-    func hasJwtSet() -> Bool {
+    public func hasJwtSet() -> Bool {
         return self.jwtToken != nil
     }
     
