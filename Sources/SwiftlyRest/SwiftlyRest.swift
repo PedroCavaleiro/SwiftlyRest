@@ -106,6 +106,11 @@ public class SwiftlyRest: SwiftlyRestInterface {
         self.loggingEnabled = enabled
     }
     
+    /// Checks if the user is authenticated
+    func hasJwtSet() -> Bool {
+        return self.jwtToken != nil
+    }
+    
     /// Stored the active jwt token on the platform if a jwt is passed that token will be stored instead
     /// The jwt will be stored on the key *token* by default
     ///

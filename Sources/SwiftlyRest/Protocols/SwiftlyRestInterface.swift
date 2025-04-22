@@ -39,6 +39,9 @@ protocol SwiftlyRestInterface {
     ///  - key: The Keychain key where to store the token
     func storeJwtOnKeychain(jwt token: String?, on key: String)
     
+    /// Checks if the user is authenticated
+    func hasJwtSet() -> Bool
+    
     /// Loads the JWT stored in the keychain onto the JWT variable to use in the requests
     ///
     /// - Parameter key: The key where the token is stored
