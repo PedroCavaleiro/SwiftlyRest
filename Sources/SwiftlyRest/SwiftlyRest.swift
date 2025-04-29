@@ -19,6 +19,7 @@ public enum SwiftlyRestError: Error, Equatable {
     case badGateway
     case serviceUnavailable
     case timeout
+    case unexpectedResponseFormat
     case unknown(code: Int, message: String)
 
     public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
@@ -311,8 +312,12 @@ public class SwiftlyRest: SwiftlyRestInterface {
         
         if (200...299).contains(httpResponse.statusCode) {
             let decoder = JSONDecoder()
-            let decodedData = try! decoder.decode(T.self, from: data)
-            return .success(decodedData)
+            do {
+                let decodedData = try decoder.decode(T.self, from: data)
+                return .success(decodedData)
+            } catch (_) {
+                return .failure(SwiftlyRestError.unexpectedResponseFormat)
+            }
         } else {
             switch httpResponse.statusCode {
             case 400: return .failure(SwiftlyRestError.badRequest(message: String(data: data, encoding: .utf8) ?? "Error reading server response"))
