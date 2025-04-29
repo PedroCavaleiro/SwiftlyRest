@@ -219,7 +219,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
-        return await makeRequest(endpoint: endpoint, method: .post, body: Optional<Data>.none, responseType: T.self, headers: headers)
+        return await makeRequest(endpoint: endpoint, method: .delete, body: Optional<Data>.none, responseType: T.self, headers: headers)
     }
     
     /// Generates the headers for a request
