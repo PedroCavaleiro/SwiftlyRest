@@ -21,6 +21,7 @@ public enum SwiftlyRestError: Error, Equatable {
     case timeout
     case unexpectedResponseFormat
     case unknown(code: Int, message: String)
+    case badRequestBody
 
     public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
         switch (lhs, rhs) {
@@ -32,7 +33,8 @@ public enum SwiftlyRestError: Error, Equatable {
             (.internalServerError, .internalServerError),
             (.badGateway, .badGateway),
             (.serviceUnavailable, .serviceUnavailable),
-            (.timeout, .timeout):
+            (.timeout, .timeout),
+            (.badRequestBody, .badRequestBody):
             return true
         case (.badRequest(let lhsMessage), .badRequest(let rhsMessage)):
             return lhsMessage == rhsMessage
@@ -71,8 +73,16 @@ public class SwiftlyRest: SwiftlyRestInterface {
     private let tag: String = "[SwiftlyRest]"
     private var apiAuthConfiguration: ApiAuthenticationInterface?
     private var jwtToken: String?
+    private var contentTypeHeader: String = "application/json"
     
     private init() {}
+    
+    /// Sets the content type header
+    ///
+    /// - Parameter contentType: The content type header value, defaults to "application/json"
+    public func setContentType(_ contentType: String) {
+        self.contentTypeHeader = contentType
+    }
     
     /// Configures the base URL to be used
     ///
@@ -277,6 +287,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         request.httpMethod = method.rawValue
         
         var allHeaders: [String: String] = headers
+        allHeaders["Content-Type"] = self.contentTypeHeader
         if let authConfig = apiAuthConfiguration {
             let authHeaders = authConfig.generateHeaders(forMethod: method, forBody: body, withJwt: jwtToken)
             authHeaders.forEach { (key, value) in
@@ -295,6 +306,13 @@ public class SwiftlyRest: SwiftlyRestInterface {
         }
         
         request.allHTTPHeaderFields = allHeaders
+        
+        if let reqBody = body {
+            if let jsonData = try? JSONEncoder().encode(reqBody) {
+                request.httpBody = jsonData
+                writeLog("\(tag)[requestBody] \(String(describing: String(data: jsonData, encoding: .utf8)))")
+            }
+        }
         
         let requestResponse = try? await URLSession.shared.data(for: request)
         
