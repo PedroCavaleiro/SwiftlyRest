@@ -21,6 +21,7 @@ public enum SwiftlyRestError: Error, Equatable {
     case timeout
     case unexpectedResponseFormat
     case unknown(code: Int, message: String)
+    case badRequestBody
 
     public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
         switch (lhs, rhs) {
@@ -32,7 +33,8 @@ public enum SwiftlyRestError: Error, Equatable {
             (.internalServerError, .internalServerError),
             (.badGateway, .badGateway),
             (.serviceUnavailable, .serviceUnavailable),
-            (.timeout, .timeout):
+            (.timeout, .timeout),
+            (.badRequestBody, .badRequestBody):
             return true
         case (.badRequest(let lhsMessage), .badRequest(let rhsMessage)):
             return lhsMessage == rhsMessage
@@ -305,9 +307,11 @@ public class SwiftlyRest: SwiftlyRestInterface {
         
         request.allHTTPHeaderFields = allHeaders
         
-        if body != nil {
-            writeLog("\(tag)[requestBody]: \(try! JSONEncoder().encode(body!))")
-            request.httpBody = try! JSONEncoder().encode(body!)
+        if let reqBody = body {
+            if let jsonData = try? JSONEncoder().encode(reqBody) {
+                request.httpBody = jsonData
+                writeLog("\(tag)[requestBody] \(String(describing: String(data: jsonData, encoding: .utf8)))")
+            }
         }
         
         let requestResponse = try? await URLSession.shared.data(for: request)
