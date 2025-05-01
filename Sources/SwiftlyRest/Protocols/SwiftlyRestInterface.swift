@@ -9,6 +9,11 @@ import Foundation
 
 protocol SwiftlyRestInterface {
     
+    /// Sets the content type header
+    ///
+    /// - Parameter contentType: The content type header value, defaults to "application/json"
+    func setContentType(_ contentType: String)
+    
     /// Configures the base URL to be used
     ///
     /// - Parameter url: The base URL to use

@@ -71,8 +71,16 @@ public class SwiftlyRest: SwiftlyRestInterface {
     private let tag: String = "[SwiftlyRest]"
     private var apiAuthConfiguration: ApiAuthenticationInterface?
     private var jwtToken: String?
+    private var contentTypeHeader: String = "application/json"
     
     private init() {}
+    
+    /// Sets the content type header
+    ///
+    /// - Parameter contentType: The content type header value, defaults to "application/json"
+    public func setContentType(_ contentType: String) {
+        self.contentTypeHeader = contentType
+    }
     
     /// Configures the base URL to be used
     ///
@@ -277,6 +285,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
         request.httpMethod = method.rawValue
         
         var allHeaders: [String: String] = headers
+        allHeaders["Content-Type"] = self.contentTypeHeader
         if let authConfig = apiAuthConfiguration {
             let authHeaders = authConfig.generateHeaders(forMethod: method, forBody: body, withJwt: jwtToken)
             authHeaders.forEach { (key, value) in
@@ -295,6 +304,11 @@ public class SwiftlyRest: SwiftlyRestInterface {
         }
         
         request.allHTTPHeaderFields = allHeaders
+        
+        if body != nil {
+            writeLog("\(tag)[requestBody]: \(try! JSONEncoder().encode(body!))")
+            request.httpBody = try! JSONEncoder().encode(body!)
+        }
         
         let requestResponse = try? await URLSession.shared.data(for: request)
         
