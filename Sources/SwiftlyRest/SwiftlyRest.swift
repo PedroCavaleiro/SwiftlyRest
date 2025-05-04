@@ -175,7 +175,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     @available(iOS 15.0, *)
     public func post<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
-        body: U,
+        body: U? = nil,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .post, body: body, responseType: T.self, headers: headers)
@@ -193,7 +193,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     @available(iOS 15.0, *)
     public func patch<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
-        body: U,
+        body: U? = nil,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .patch, body: body, responseType: T.self, headers: headers)
@@ -211,7 +211,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     @available(iOS 15.0, *)
     public func put<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
-        body: U,
+        body: U? = nil,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
         return await makeRequest(endpoint: endpoint, method: .put, body: body, responseType: T.self, headers: headers)

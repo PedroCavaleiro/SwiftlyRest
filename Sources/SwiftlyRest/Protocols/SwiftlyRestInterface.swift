@@ -77,7 +77,7 @@ protocol SwiftlyRestInterface {
     @available(iOS 15.0, *)
     func post<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
-        body: U,
+        body: U?,
         headers: [String: String]
     ) async -> Result<T, SwiftlyRestError>
     
@@ -93,7 +93,7 @@ protocol SwiftlyRestInterface {
     @available(iOS 15.0, *)
     func patch<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
-        body: U,
+        body: U?,
         headers: [String: String]
     ) async -> Result<T, SwiftlyRestError>
     
@@ -109,7 +109,7 @@ protocol SwiftlyRestInterface {
     @available(iOS 15.0, *)
     func put<T: Codable, U: Codable>(
         _ endpoint: EndpointInterface,
-        body: U,
+        body: U?,
         headers: [String: String]
     ) async -> Result<T, SwiftlyRestError>
     
