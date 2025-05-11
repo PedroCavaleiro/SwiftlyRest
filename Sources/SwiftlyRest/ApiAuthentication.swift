@@ -7,6 +7,7 @@
 
 import Foundation
 import CryptoKit
+import ExtendedSwift
 
 /// This is the REST API authentication method that I usually use
 /// You can implement your own and set it as default REST API authentication on the SwiftlyRest class
