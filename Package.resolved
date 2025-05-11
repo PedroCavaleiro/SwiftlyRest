@@ -1,6 +1,15 @@
 {
-  "originHash" : "a67e562593113adb868ca01a696c3f062b7659c922d8f1e1378f0150253ee3e4",
+  "originHash" : "47cdbfbd75a40c213c8424dc2f1c899baf6b8be715a7c0b2a1a7d960c89ae83e",
   "pins" : [
+    {
+      "identity" : "extendedswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PedroCavaleiro/ExtendedSwift",
+      "state" : {
+        "revision" : "dd6abe5cefa5bd9219b977fe3abf0d389414e3f7",
+        "version" : "1.0.1"
+      }
+    },
     {
       "identity" : "keychain-swift",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,15 @@
       "state" : {
         "revision" : "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
         "version" : "24.0.0"
+      }
+    },
+    {
+      "identity" : "notifier",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PedroCavaleiro/Notifier",
+      "state" : {
+        "revision" : "1199d672ce1be0e291e318c247ded2dfef6d54ae",
+        "version" : "1.0.1"
       }
     }
   ],
