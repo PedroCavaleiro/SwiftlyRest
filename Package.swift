@@ -20,7 +20,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/evgenyneu/keychain-swift", .upToNextMajor(from: "24.0.0")),
-        .package(url: "https://github.com/PedroCavaleiro/ExtendedSwift", .upToNextMajor(from: "1.1.7")),
+        .package(url: "https://github.com/PedroCavaleiro/ExtendedSwift", .upToNextMajor(from: "1.2.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
