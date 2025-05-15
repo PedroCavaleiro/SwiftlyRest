@@ -1,13 +1,13 @@
 {
-  "originHash" : "2a499b8daa39fdfbfd0e41f58550fb47f997f2abaf368fc9730c2531e12fdb36",
+  "originHash" : "709b53c721295460eda95ba9d8b87e7f2337b1638eb1d70b27aa3a213b832732",
   "pins" : [
     {
       "identity" : "extendedswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PedroCavaleiro/ExtendedSwift",
       "state" : {
-        "revision" : "6319957d7f4f9ebe4a44e0e779efd7153216f3a4",
-        "version" : "1.2.0"
+        "revision" : "83995c23187357b1875c316a2b58159c23086596",
+        "version" : "1.2.1"
       }
     },
     {
