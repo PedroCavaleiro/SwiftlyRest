@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "ExtendedSwift",
-        "repositoryURL": "https://github.com/PedroCavaleiro/ExtendedSwift",
-        "state": {
-          "branch": null,
-          "revision": "4a597ac2b3d919e36c72c8aa4a6f42db31be207a",
-          "version": "1.1.3"
-        }
-      },
-      {
-        "package": "KeychainSwift",
-        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
-        "state": {
-          "branch": null,
-          "revision": "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
-          "version": "24.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "extendedswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PedroCavaleiro/ExtendedSwift",
+      "state" : {
+        "revision" : "152b83fd37d8b76df2d2e7524ef838336baf63d2",
+        "version" : "1.1.5"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift.git",
+      "state" : {
+        "revision" : "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
+        "version" : "24.0.0"
+      }
+    }
+  ],
+  "version" : 2
 }
