@@ -1,13 +1,13 @@
 {
-  "originHash" : "47cdbfbd75a40c213c8424dc2f1c899baf6b8be715a7c0b2a1a7d960c89ae83e",
+  "originHash" : "18cc75ccd910ec7cc698743b88acc9d8df9a40168a75bbcd89ea0bdec086dacf",
   "pins" : [
     {
       "identity" : "extendedswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PedroCavaleiro/ExtendedSwift",
       "state" : {
-        "revision" : "dd6abe5cefa5bd9219b977fe3abf0d389414e3f7",
-        "version" : "1.0.1"
+        "revision" : "87d4e67ba12b62d9344e62248fb2324cb9bab261",
+        "version" : "1.1.1"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PedroCavaleiro/Notifier",
       "state" : {
-        "revision" : "1199d672ce1be0e291e318c247ded2dfef6d54ae",
-        "version" : "1.0.1"
+        "revision" : "6ae07487b3544b9633abbe6c837fd9a955ac2b46",
+        "version" : "1.1.0"
       }
     }
   ],
