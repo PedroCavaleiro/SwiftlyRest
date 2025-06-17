@@ -8,8 +8,7 @@ let package = Package(
     platforms: [
         .iOS(.v15),
         .tvOS(.v15),
-        .macOS(.v13),
-        .visionOS(.v1),
+        .macOS(.v12),
         .watchOS(.v6)
     ],
     products: [
@@ -21,6 +20,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/evgenyneu/keychain-swift", .upToNextMajor(from: "24.0.0")),
+        .package(url: "https://github.com/PedroCavaleiro/ExtendedSwift", .upToNextMajor(from: "1.2.1")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -28,7 +28,8 @@ let package = Package(
         .target(
             name: "SwiftlyRest",
             dependencies: [
-                .product(name: "KeychainSwift", package: "keychain-swift")
+                .product(name: "KeychainSwift", package: "keychain-swift"),
+                .product(name: "ExtendedSwift", package: "ExtendedSwift")
             ]
         ),
     ]

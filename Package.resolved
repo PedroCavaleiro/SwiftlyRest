@@ -1,6 +1,15 @@
 {
-  "originHash" : "a67e562593113adb868ca01a696c3f062b7659c922d8f1e1378f0150253ee3e4",
+  "originHash" : "709b53c721295460eda95ba9d8b87e7f2337b1638eb1d70b27aa3a213b832732",
   "pins" : [
+    {
+      "identity" : "extendedswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PedroCavaleiro/ExtendedSwift",
+      "state" : {
+        "revision" : "83995c23187357b1875c316a2b58159c23086596",
+        "version" : "1.2.1"
+      }
+    },
     {
       "identity" : "keychain-swift",
       "kind" : "remoteSourceControl",
