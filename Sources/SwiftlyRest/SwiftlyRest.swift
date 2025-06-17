@@ -8,7 +8,7 @@
 import Foundation
 import KeychainSwift
 
-public enum SwiftlyRestError: Error, Equatable {
+public enum SwiftlyRestError: Error, Equatable, Sendable {
     case invalidURL
     case noResponse
     case badRequest(message: String)
