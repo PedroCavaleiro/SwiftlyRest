@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SwiftlyRest Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SwiftlyRest" class="dashAnchor"></a>
+    <a title="SwiftlyRest Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Index</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Classes.html">Classes</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        SwiftlyRest.SwiftlyRest Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ApiAuthentication.html">ApiAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftlyRest.html">SwiftlyRest</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/HTTPMethod.html">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RetryableCodes.html">RetryableCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EndpointInterface.html">EndpointInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:11SwiftlyRest19StringRepresentableP">StringRepresentable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SwiftlyRest</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">12.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SwiftlyRest</span> <span class="p">:</span> <span class="kt">SwiftlyRestInterface</span></code></pre>
+
+                </div>
+              </div>
+            <p>Main class for interacting with REST APIs using SwiftlyRest.</p>
+
+<p>Provides methods for configuring authentication, base URL, content type, and for performing HTTP requests (GET, POST, PUT, PATCH, DELETE).
+Handles JWT storage, request logging, and header generation. Use the shared instance for most operations.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC6sharedABvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC6sharedABvpZ">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span><span class="p">:</span> <span class="kt">SwiftlyRest</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC14setContentTypeyySSF"></a>
+                    <a name="//apple_ref/swift/Method/setContentType(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC14setContentTypeyySSF">setContentType(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the content type header</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setContentType</span><span class="p">(</span><span class="n">_</span> <span class="nv">contentType</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contentType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The content type header value, defaults to &ldquo;application/json&rdquo;</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC10setBaseURLyySSKF"></a>
+                    <a name="//apple_ref/swift/Method/setBaseURL(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC10setBaseURLyySSKF">setBaseURL(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configures the base URL to be used</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Enums/SwiftlyRestError.html#/s:11SwiftlyRest0aB5ErrorO10invalidURLyA2CmF">SwiftlyRestError.invalidURL</a></code> if the provided URL is not valid
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setBaseURL</span><span class="p">(</span><span class="n">_</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The base URL to use</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC16configureApiAuthyyAA0D23AuthenticationInterface_pF"></a>
+                    <a name="//apple_ref/swift/Method/configureApiAuth(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC16configureApiAuthyyAA0D23AuthenticationInterface_pF">configureApiAuth(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configures the API Auth with the <code><a href="../Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a></code> protocol
+When set the headers will be automatically added to the request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">configureApiAuth</span><span class="p">(</span><span class="n">_</span> <span class="nv">apiAuthConfiguration</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>apiAuthConfiguration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The API configuration</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC11setJwtTokenyySSSgF"></a>
+                    <a name="//apple_ref/swift/Method/setJwtToken(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC11setJwtTokenyySSSgF">setJwtToken(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the JWT token for the requests</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setJwtToken</span><span class="p">(</span><span class="n">_</span> <span class="nv">jwtToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>jwtToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The JWT to use in the requests, when not <code>nil</code> they will be automatically added to the request</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC14loggingEnabledyySbF"></a>
+                    <a name="//apple_ref/swift/Method/loggingEnabled(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC14loggingEnabledyySbF">loggingEnabled(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enables/Disabled the request logging</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">loggingEnabled</span><span class="p">(</span><span class="n">_</span> <span class="nv">enabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>enabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The state of the logging</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC9hasJwtSetSbyF"></a>
+                    <a name="//apple_ref/swift/Method/hasJwtSet()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC9hasJwtSetSbyF">hasJwtSet()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks if the user is authenticated</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hasJwtSet</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC18storeJwtOnKeychain3jwt2onySSSg_SStF"></a>
+                    <a name="//apple_ref/swift/Method/storeJwtOnKeychain(jwt:on:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC18storeJwtOnKeychain3jwt2onySSSg_SStF">storeJwtOnKeychain(jwt:<wbr>on:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stored the active jwt token on the platform if a jwt is passed that token will be stored instead
+The jwt will be stored on the key <em>token</em> by default</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">storeJwtOnKeychain</span><span class="p">(</span><span class="n">jwt</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">on</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"token"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC19loadJwtFromKeychain4fromySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/loadJwtFromKeychain(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC19loadJwtFromKeychain4fromySS_tF">loadJwtFromKeychain(from:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads the JWT stored in the keychain onto the JWT variable to use in the requests</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">loadJwtFromKeychain</span><span class="p">(</span><span class="n">from</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"token"</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The key where the token is stored</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC3get_7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_SDyS2SGtYaSeRzSERzlF"></a>
+                    <a name="//apple_ref/swift/Method/get(_:headers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC3get_7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_SDyS2SGtYaSeRzSERzlF">get(_:<wbr>headers:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a HTTP GET request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">15.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="k">get</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EndpointInterface.html">EndpointInterface</a></span><span class="p">,</span>
+    <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>awaitable</code> <code>Result&lt;T, SwiftlyRestError&gt;</code> Where the .success contains the parsed response or a <code><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC4post_4body7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_q_SgSDyS2SGtYaSeRzSERzSeR_SER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/post(_:body:headers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC4post_4body7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_q_SgSDyS2SGtYaSeRzSERzSeR_SER_r0_lF">post(_:<wbr>body:<wbr>headers:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a HTTP POST request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">15.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">U</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EndpointInterface.html">EndpointInterface</a></span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">U</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>awaitable</code> <code>Result&lt;T, SwiftlyRestError&gt;</code> Where the .success contains the parsed response or a <code><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC5patch_4body7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_q_SgSDyS2SGtYaSeRzSERzSeR_SER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/patch(_:body:headers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC5patch_4body7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_q_SgSDyS2SGtYaSeRzSERzSeR_SER_r0_lF">patch(_:<wbr>body:<wbr>headers:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a HTTP PATCH request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">15.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">patch</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">U</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EndpointInterface.html">EndpointInterface</a></span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">U</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>awaitable</code> <code>Result&lt;T, SwiftlyRestError&gt;</code> Where the .success contains the parsed response or a <code><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC3put_4body7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_q_SgSDyS2SGtYaSeRzSERzSeR_SER_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/put(_:body:headers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC3put_4body7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_q_SgSDyS2SGtYaSeRzSERzSeR_SER_r0_lF">put(_:<wbr>body:<wbr>headers:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a HTTP PUT request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">15.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">put</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">U</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EndpointInterface.html">EndpointInterface</a></span><span class="p">,</span>
+    <span class="nv">body</span><span class="p">:</span> <span class="kt">U</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>awaitable</code> <code>Result&lt;T, SwiftlyRestError&gt;</code> Where the .success contains the parsed response or a <code><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC6delete_7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_SDyS2SGtYaSeRzSERzlF"></a>
+                    <a name="//apple_ref/swift/Method/delete(_:headers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC6delete_7headerss6ResultOyxAA0aB5ErrorOGAA17EndpointInterface_p_SDyS2SGtYaSeRzSERzlF">delete(_:<wbr>headers:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a HTTP DELETE request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">15.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">delete</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EndpointInterface.html">EndpointInterface</a></span><span class="p">,</span>
+    <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+<span class="p">)</span> <span class="k">async</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>awaitable</code> <code>Result&lt;T, SwiftlyRestError&gt;</code> Where the .success contains the parsed response or a <code><a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a></code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRestAAC15generateHeaders3for4withSDyS2SGAA10HTTPMethodO_10Foundation4DataVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/generateHeaders(for:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRestAAC15generateHeaders3for4withSDyS2SGAA10HTTPMethodO_10Foundation4DataVSgtF">generateHeaders(for:<wbr>with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates the headers for a request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">generateHeaders</span><span class="p">(</span><span class="k">for</span> <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../Enums/HTTPMethod.html">HTTPMethod</a></span><span class="p">,</span> <span class="n">with</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The headers for a request</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-07-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

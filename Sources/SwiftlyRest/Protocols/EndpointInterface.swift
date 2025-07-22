@@ -7,8 +7,13 @@
 
 import Foundation
 
+/// A protocol that defines the requirements for building and manipulating API endpoint URLs.
+///
+/// Conforming types must provide methods for adding versions, controllers, paths, and query parameters to endpoints,
+/// as well as building the final URL string. This protocol supports both string and enumerator-based inputs for flexibility and readability.
 public protocol EndpointInterface {
     
+    /// The URL of the request.
     var url: String { get }
     
     /// Adds a version to the endpoint

@@ -7,4 +7,5 @@
 
 import Foundation
 
+/// A protocol that defines a type that can be represented as a string.
 public protocol StringRepresentable: RawRepresentable where RawValue == String { }

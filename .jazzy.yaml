@@ -1,0 +1,7 @@
+output: docs
+swift_build_tool: xcodebuild
+xcodebuild_arguments:
+  - "-scheme"
+  - "SwiftlyRest"
+  - "-destination"
+  - "platform=iOS"

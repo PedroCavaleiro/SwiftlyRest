@@ -7,11 +7,17 @@
 
 import Foundation
 
+/// A class that implements the `EndpointInterface` protocol, providing methods to build and manipulate API endpoint URLs.
+/// This class allows for the addition of versions, controllers, paths, and query parameters to create a complete URL for API requests.
+/// It supports both string and enumerator-based inputs for flexibility and readability.
 public class Endpoint: EndpointInterface {
     
-    
+    /// The URL of the request.
     public var url: String
     
+    /// Initializes the Endpoint with an optional URL.
+    /// If no URL is provided, it defaults to an empty string.
+    /// - Parameter url: The initial URL of the endpoint, defaulting to an empty string.
     public init(url: String = "") {
         self.url = url
     }
