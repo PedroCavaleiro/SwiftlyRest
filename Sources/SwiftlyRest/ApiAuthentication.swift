@@ -17,6 +17,7 @@ import ExtendedSwift
 @available(macOS 10.15, iOS 13.0, *)
 public class ApiAuthentication: ApiAuthenticationInterface {
     
+    /// The headers to include in the API requests
     private enum AuthenticationHeader: String {
         case appId = "x-app-id"
         case browser = "x-browser"
@@ -27,8 +28,16 @@ public class ApiAuthentication: ApiAuthenticationInterface {
         case requestTimestamp = "x-req-timestamp"
     }
     
+    /// The default headers used for API authentication.
+    /// These headers are typically included in every request to identify the client or provide static authentication information
     public var headers: [String: String] = [:]
     
+    /// Initializes the API authentication with the required parameters.
+    /// - Parameters:
+    ///   - deviceUuid: The unique identifier for the device, used to generate the browser fingerprint.
+    ///   - appId: The application identifier, used to authenticate the app.
+    ///   - appKey: The application key, used for additional security in the authentication process.
+    ///   - userAgent: The user agent string of the client, defaulting to "SwiftlyRest".
     public init(
         deviceUuid: String,
         appId: String,

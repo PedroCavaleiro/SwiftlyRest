@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A protocol that defines the requirements for interacting with the SwiftlyRest API.
 protocol SwiftlyRestInterface {
     
     /// Sets the content type header

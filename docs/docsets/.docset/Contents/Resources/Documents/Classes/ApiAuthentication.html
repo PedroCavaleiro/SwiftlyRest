@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ApiAuthentication Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ApiAuthentication" class="dashAnchor"></a>
+    <a title="ApiAuthentication Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Index</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Classes.html">Classes</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        SwiftlyRest.ApiAuthentication Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ApiAuthentication.html">ApiAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftlyRest.html">SwiftlyRest</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/HTTPMethod.html">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RetryableCodes.html">RetryableCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SwiftlyRestError.html">SwiftlyRestError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EndpointInterface.html">EndpointInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:11SwiftlyRest19StringRepresentableP">StringRepresentable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ApiAuthentication</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">macOS</span> <span class="mf">10.15</span><span class="p">,</span> <span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">ApiAuthentication</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This is the REST API authentication method that I usually use
+You can implement your own and set it as default REST API authentication on the SwiftlyRest class</p>
+
+<p>Check this repository for more information
+<a href="https://github.com/PedroCavaleiro/api-app-authentication">https://github.com/PedroCavaleiro/api-app-authentication</a></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRest17ApiAuthenticationC7headersSDyS2SGvp"></a>
+                    <a name="//apple_ref/swift/Property/headers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest17ApiAuthenticationC7headersSDyS2SGvp">headers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default headers used for API authentication.
+These headers are typically included in every request to identify the client or provide static authentication information</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRest17ApiAuthenticationC10deviceUuid5appId0G3Key9userAgentACSS_S3Stcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(deviceUuid:appId:appKey:userAgent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest17ApiAuthenticationC10deviceUuid5appId0G3Key9userAgentACSS_S3Stcfc">init(deviceUuid:<wbr>appId:<wbr>appKey:<wbr>userAgent:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes the API authentication with the required parameters.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">deviceUuid</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">appId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">appKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">userAgent</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"SwiftlyRest"</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deviceUuid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique identifier for the device, used to generate the browser fingerprint.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The application identifier, used to authenticate the app.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The application key, used for additional security in the authentication process.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userAgent</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The user agent string of the client, defaulting to &ldquo;SwiftlyRest&rdquo;.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRest17ApiAuthenticationC15generateHeaders9forMethod0G4Body7withJwtSDyS2SGAA10HTTPMethodO_xSgSSSgtSeRzSERzlF"></a>
+                    <a name="//apple_ref/swift/Method/generateHeaders(forMethod:forBody:withJwt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest17ApiAuthenticationC15generateHeaders9forMethod0G4Body7withJwtSDyS2SGAA10HTTPMethodO_xSgSSSgtSeRzSERzlF">generateHeaders(forMethod:<wbr>forBody:<wbr>withJwt:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates the headers to authenticate with the API
+This authenticates both the client and the user</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">generateHeaders</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">forMethod</span> <span class="nv">method</span><span class="p">:</span> <span class="kt"><a href="../Enums/HTTPMethod.html">HTTPMethod</a></span><span class="p">,</span>
+    <span class="n">forBody</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">T</span><span class="p">?,</span>
+    <span class="n">withJwt</span> <span class="nv">jwt</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Enums/HTTPMethod.html">HTTPMethod</a></code> of the request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, nil <code>if</code> none, must be <code>codable</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>jwt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The JWT token for the user authentication, <code>nil</code> for no authentication</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-07-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

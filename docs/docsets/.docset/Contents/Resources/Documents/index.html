@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="Index  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Index</a>
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ApiAuthentication.html">ApiAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SwiftlyRest.html">SwiftlyRest</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/HTTPMethod.html">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RetryableCodes.html">RetryableCodes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SwiftlyRestError.html">SwiftlyRestError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/EndpointInterface.html">EndpointInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:11SwiftlyRest19StringRepresentableP">StringRepresentable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='swiftlyrest' class='heading'>SwiftlyRest</h1>
+
+<p>SwiftlyRest is a lightweight and extensible Swift package for making REST API requests with modern Swift features. It provides a simple interface for configuring authentication, building endpoints, handling JWT tokens, and performing HTTP requests with built-in error handling and retry logic.</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>Easy configuration of base URL, authentication, and content type</li>
+<li>Support for JWT token management and secure storage using Keychain</li>
+<li>Protocol-based endpoint building for clean and readable API paths</li>
+<li>Async/await HTTP requests (GET, POST, PUT, PATCH, DELETE)</li>
+<li>Customizable authentication via protocols</li>
+<li>Detailed error handling with <code><a href="Enums/SwiftlyRestError.html">SwiftlyRestError</a></code> and retryable codes</li>
+<li>Request logging for debugging</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>Add SwiftlyRest to your <code>Package.swift</code> dependencies:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/yourusername/SwiftlyRest.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+</code></pre>
+
+<p>Then add it to your target:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"YourApp"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"SwiftlyRest"</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='basic-setup' class='heading'>Basic Setup</h3>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">SwiftlyRest</span>
+
+<span class="k">let</span> <span class="nv">rest</span> <span class="o">=</span> <span class="kt">SwiftlyRest</span><span class="o">.</span><span class="n">shared</span>
+<span class="k">try</span><span class="p">?</span> <span class="n">rest</span><span class="o">.</span><span class="nf">setBaseURL</span><span class="p">(</span><span class="s">"https://api.example.com"</span><span class="p">)</span>
+<span class="n">rest</span><span class="o">.</span><span class="nf">setContentType</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">)</span>
+<span class="n">rest</span><span class="o">.</span><span class="nf">loggingEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</code></pre>
+<h3 id='jwt-token-management' class='heading'>JWT Token Management</h3>
+<pre class="highlight swift"><code><span class="n">rest</span><span class="o">.</span><span class="nf">setJwtToken</span><span class="p">(</span><span class="s">"your-jwt-token"</span><span class="p">)</span>
+<span class="n">rest</span><span class="o">.</span><span class="nf">storeJwtOnKeychain</span><span class="p">()</span>
+<span class="n">rest</span><span class="o">.</span><span class="nf">loadJwtFromKeychain</span><span class="p">()</span>
+</code></pre>
+<h3 id='configuring-api-authentication' class='heading'>Configuring API Authentication</h3>
+
+<p>Implement <code><a href="Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a></code> to customize authentication headers:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MyAuth</span><span class="p">:</span> <span class="kt">ApiAuthenticationInterface</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="p">[</span><span class="s">"X-Api-Key"</span><span class="p">:</span> <span class="s">"your-key"</span><span class="p">]</span> <span class="p">}</span>
+    <span class="kd">func</span> <span class="n">generateHeaders</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Codable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">forMethod</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">HTTPMethod</span><span class="p">,</span> <span class="n">forBody</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">T</span><span class="p">?,</span> <span class="n">withJwt</span> <span class="nv">jwt</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="p">{</span>
+        <span class="c1">// Custom header logic</span>
+        <span class="k">return</span> <span class="n">headers</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">rest</span><span class="o">.</span><span class="nf">configureApiAuth</span><span class="p">(</span><span class="kt">MyAuth</span><span class="p">())</span>
+</code></pre>
+<h3 id='making-requests' class='heading'>Making Requests</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">endpoint</span><span class="p">:</span> <span class="kt">EndpointInterface</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// Build your endpoint</span>
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">rest</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+<span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">data</span><span class="p">):</span>
+    <span class="c1">// Handle data</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+    <span class="c1">// Handle error</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='error-handling' class='heading'>Error Handling</h2>
+
+<p>All requests return a <code>Result&lt;T, SwiftlyRestError&gt;</code>. See <code><a href="Enums/SwiftlyRestError.html">SwiftlyRestError</a></code> for all error cases, including retryable codes in <code><a href="Enums/RetryableCodes.html">RetryableCodes</a></code>.</p>
+<h2 id='protocols' class='heading'>Protocols</h2>
+
+<ul>
+<li><code><a href="Protocols/ApiAuthenticationInterface.html">ApiAuthenticationInterface</a></code>: For custom authentication header logic</li>
+<li><code><a href="Protocols/EndpointInterface.html">EndpointInterface</a></code>: For building endpoint URLs</li>
+</ul>
+<h2 id='full-documentation' class='heading'>Full documentation</h2>
+
+<p>Check the GitHub pages for docs <a href="https://PedroCavaleiro.github.io/SwiftlyRest/">https://PedroCavaleiro.github.io/SwiftlyRest/</a></p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>MIT</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-07-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

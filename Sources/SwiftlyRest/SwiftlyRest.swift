@@ -8,21 +8,39 @@
 import Foundation
 import KeychainSwift
 
+
+/// Represents errors that can occur when making REST API requests using SwiftlyRest.
+///
+/// Each case corresponds to a specific error scenario, including HTTP status codes, network issues, and unexpected responses.
 public enum SwiftlyRestError: Error, Equatable, Sendable {
+    /// The provided URL is invalid.
     case invalidURL
+    /// No response was received from the server.
     case noResponse
+    /// The server returned a bad request (400) with an optional message.
     case badRequest(message: String)
+    /// The request was unauthorized (401).
     case unauthorized
+    /// The request was forbidden (403).
     case forbidden
+    /// The requested resource was not found (404).
     case notFound
+    /// The server encountered an internal error (500).
     case internalServerError
+    /// The server returned a bad gateway error (502).
     case badGateway
+    /// The service is unavailable (503).
     case serviceUnavailable
+    /// The request timed out (504).
     case timeout
+    /// The response format was unexpected or could not be parsed.
     case unexpectedResponseFormat
+    /// An unknown error occurred, with code and message.
     case unknown(code: Int, message: String)
+    /// The request body was invalid or could not be encoded.
     case badRequestBody
 
+    /// Compares two SwiftlyRestError values for equality.
     public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
         switch (lhs, rhs) {
         case (.invalidURL, .invalidURL),
@@ -46,23 +64,44 @@ public enum SwiftlyRestError: Error, Equatable, Sendable {
     }
 }
 
-
+/// Represents the HTTP methods used in REST API requests.
+///
+/// Each case corresponds to a standard HTTP method for interacting with RESTful services.
 public enum HTTPMethod: String, Equatable {
+    /// HTTP GET method, used to retrieve data from the server.
     case get    = "GET"
+    /// HTTP POST method, used to send new data to the server.
     case post   = "POST"
+    /// HTTP PUT method, used to update existing data on the server.
     case put    = "PUT"
+    /// HTTP PATCH method, used to partially update data on the server.
     case patch  = "PATCH"
+    /// HTTP DELETE method, used to remove data from the server.
     case delete = "DELETE"
 }
 
+
+/// Represents HTTP status codes that are considered retryable for REST API requests.
+///
+/// Use this enum to identify errors where a retry attempt may be appropriate.
 public enum RetryableCodes: Int, Equatable {
+    /// Internal server error (500).
     case internalServerError = 500
+    /// Bad gateway error (502).
     case badGateway          = 502
+    /// Service unavailable error (503).
     case serviceUnavailable  = 503
+    /// Timeout error (504).
     case timeout             = 504
+    /// Unknown error code (custom value).
     case unknown             = 999
 }
 
+
+/// Main class for interacting with REST APIs using SwiftlyRest.
+///
+/// Provides methods for configuring authentication, base URL, content type, and for performing HTTP requests (GET, POST, PUT, PATCH, DELETE).
+/// Handles JWT storage, request logging, and header generation. Use the shared instance for most operations.
 @available(macOS 12.0, *)
 public class SwiftlyRest: SwiftlyRestInterface {
     
