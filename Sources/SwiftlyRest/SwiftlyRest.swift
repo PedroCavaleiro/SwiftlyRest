@@ -14,31 +14,92 @@ import KeychainSwift
 /// Each case corresponds to a specific error scenario, including HTTP status codes, network issues, and unexpected responses.
 public enum SwiftlyRestError: Error, Equatable, Sendable {
     /// The provided URL is invalid.
-    case invalidURL
+    /// - Parameter url: The invalid URL string that caused the error.
+    case invalidURL(_ url: String)
     /// No response was received from the server.
-    case noResponse
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case noResponse(_ url: String, headers: [String: String] = [:], body: String? = nil)
     /// The server returned a bad request (400) with an optional message.
-    case badRequest(message: String)
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    ///   - response: The response body from the server, if available.
+    case badRequest(_ url: String, headers: [String: String] = [:], body: String? = nil, response: String = "")
     /// The request was unauthorized (401).
-    case unauthorized
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    ///   - response: The response body from the server, if available.
+    case unauthorized(_ url: String, headers: [String: String] = [:], body: String? = nil, response: String = "")
     /// The request was forbidden (403).
-    case forbidden
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    ///   - response: The response body from the server, if available.
+    case forbidden(_ url: String, headers: [String: String] = [:], body: String? = nil, response: String = "")
     /// The requested resource was not found (404).
-    case notFound
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case notFound(_ url: String, headers: [String: String] = [:], body: String? = nil)
     /// The server encountered an internal error (500).
-    case internalServerError
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    ///   - response: The response body from the server, if available.
+    case internalServerError(_ url: String, headers: [String: String] = [:], body: String? = nil, response: String = "")
     /// The server returned a bad gateway error (502).
-    case badGateway
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case badGateway(_ url: String, headers: [String: String] = [:], body: String? = nil)
     /// The service is unavailable (503).
-    case serviceUnavailable
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case serviceUnavailable(_ url: String, headers: [String: String] = [:], body: String? = nil)
+    /// The request timed out (408).
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case timeout(_ url: String, headers: [String: String] = [:], body: String? = nil)
     /// The request timed out (504).
-    case timeout
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case gatewayTimeout(_ url: String, headers: [String: String] = [:], body: String? = nil)
     /// The response format was unexpected or could not be parsed.
-    case unexpectedResponseFormat
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    ///   - response: The response body from the server, if available.
+    case unexpectedResponseFormat(_ url: String, headers: [String: String] = [:], body: String? = nil, response: String = "")
     /// An unknown error occurred, with code and message.
-    case unknown(code: Int, message: String)
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    ///   - response: The response body from the server, if available.
+    case unknown(_ url: String, headers: [String: String] = [:], body: String? = nil, code: Int, response: String = "")
     /// The request body was invalid or could not be encoded.
-    case badRequestBody
+    /// - Parameters:
+    ///   - url: The URL that was requested.
+    ///   - headers: The headers sent with the request.
+    ///   - body: The body of the request, if any.
+    case badRequestBody(_ url: String, headers: [String: String] = [:], body: String? = nil)
 
     /// Compares two SwiftlyRestError values for equality.
     public static func == (lhs: SwiftlyRestError, rhs: SwiftlyRestError) -> Bool {
@@ -54,10 +115,10 @@ public enum SwiftlyRestError: Error, Equatable, Sendable {
             (.timeout, .timeout),
             (.badRequestBody, .badRequestBody):
             return true
-        case (.badRequest(let lhsMessage), .badRequest(let rhsMessage)):
-            return lhsMessage == rhsMessage
-        case (.unknown(let lhsCode, let lhsMessage), .unknown(let rhsCode, let rhsMessage)):
-            return lhsCode == rhsCode && lhsMessage == rhsMessage
+        case (.badRequest(let lhsUrl, let lhsHeaders, let lhsBody, let lhsMessage), .badRequest(let rhsUrl, let rhsHeaders, let rhsBody, let rhsMessage)):
+            return lhsMessage == rhsMessage && lhsUrl == rhsUrl && lhsHeaders == rhsHeaders && lhsBody == rhsBody
+        case (.unknown(let lhsUrl, let lhsHeaders, let lhsBody, let lhsCode, let lhsMessage), .unknown(let rhsUrl, let rhsHeaders, let rhsBody, let rhsCode, let rhsMessage)):
+            return lhsCode == rhsCode && lhsMessage == rhsMessage && lhsUrl == rhsUrl && lhsHeaders == rhsHeaders && lhsBody == rhsBody
         default:
             return false
         }
@@ -129,7 +190,7 @@ public class SwiftlyRest: SwiftlyRestInterface {
     /// - Throws: `SwiftlyRestError.invalidURL` if the provided URL is not valid
     public func setBaseURL(_ url: String) throws {
         guard let url = URL(string: url) else {
-            throw SwiftlyRestError.invalidURL
+            throw SwiftlyRestError.invalidURL(url)
         }
         self.baseURL = url
     }
@@ -312,12 +373,12 @@ public class SwiftlyRest: SwiftlyRestInterface {
         
         guard let endpointUrl = try? endpoint.build() else {
             writeLog("\(tag)[invalidURL] Failed to build the URL: \(endpoint.url)")
-            return .failure(SwiftlyRestError.invalidURL)
+            return .failure(SwiftlyRestError.invalidURL(endpoint.url))
         }
         
         guard let requestUrl = URL(string: endpointUrl, relativeTo: baseURL) else {
             writeLog("\(tag)[invalidURL] Failed to build the URL: \(baseURL?.absoluteString ?? "")\(endpoint.url)")
-            return .failure(SwiftlyRestError.invalidURL)
+            return .failure(SwiftlyRestError.invalidURL(endpointUrl))
         }
         
         writeLog("\(tag)[requestURL] Request URL: \(requestUrl.absoluteString)")
@@ -357,12 +418,24 @@ public class SwiftlyRest: SwiftlyRestInterface {
         
         guard let (data, response) = requestResponse else {
             writeLog("\(tag)[requestError] No response from the server")
-            return .failure(SwiftlyRestError.noResponse)
+            return .failure(
+                SwiftlyRestError.noResponse(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
         }
         
         guard let httpResponse = response as? HTTPURLResponse else {
             writeLog("\(tag)[requestError] No response from the server")
-            return .failure(SwiftlyRestError.noResponse)
+            return .failure(
+                SwiftlyRestError.noResponse(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
         }
         
         writeLog("\(tag)[response] Server Response: \(String(data: data, encoding: .utf8) ?? "Error parsing data")")
@@ -373,22 +446,91 @@ public class SwiftlyRest: SwiftlyRestInterface {
                 let decodedData = try decoder.decode(T.self, from: data)
                 return .success(decodedData)
             } catch (_) {
-                return .failure(SwiftlyRestError.unexpectedResponseFormat)
+                return .failure(
+                    SwiftlyRestError.unexpectedResponseFormat(
+                        requestUrl.absoluteString,
+                        headers: allHeaders,
+                        body: String(data: request.httpBody ?? Data(), encoding: .utf8),
+                        response: String(data: data, encoding: .utf8) ?? "Error reading server response"
+                    )
+                )
             }
         } else {
             switch httpResponse.statusCode {
-            case 400: return .failure(SwiftlyRestError.badRequest(message: String(data: data, encoding: .utf8) ?? "Error reading server response"))
-            case 401: return .failure(SwiftlyRestError.unauthorized)
-            case 403: return .failure(SwiftlyRestError.forbidden)
-            case 404: return .failure(SwiftlyRestError.notFound)
-            case 500: return .failure(SwiftlyRestError.internalServerError)
-            case 502: return .failure(SwiftlyRestError.badGateway)
-            case 503: return .failure(SwiftlyRestError.serviceUnavailable)
-            case 504: return .failure(SwiftlyRestError.timeout)
+            case 400: return .failure(
+                SwiftlyRestError.badRequest(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8),
+                    response: String(data: data, encoding: .utf8) ?? "Error reading server response"
+                )
+            )
+            case 401: return .failure(
+                SwiftlyRestError.unauthorized(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8),
+                    response: String(data: data, encoding: .utf8) ?? "Error reading server response"
+                )
+            )
+            case 403: return .failure(
+                SwiftlyRestError.forbidden(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8),
+                    response: String(data: data, encoding: .utf8) ?? "Error reading server response"
+                )
+            )
+            case 404: return .failure(
+                SwiftlyRestError.notFound(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
+            case 408: return .failure(
+                SwiftlyRestError.timeout(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
+            case 500: return .failure(
+                SwiftlyRestError.internalServerError(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8),
+                    response: String(data: data, encoding: .utf8) ?? "Error reading server response"
+                )
+            )
+            case 502: return .failure(
+                SwiftlyRestError.badGateway(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
+            case 503: return .failure(
+                SwiftlyRestError.serviceUnavailable(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
+            case 504: return .failure(
+                SwiftlyRestError.gatewayTimeout(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8)
+                )
+            )
             default: return .failure(
                 SwiftlyRestError.unknown(
+                    requestUrl.absoluteString,
+                    headers: allHeaders,
+                    body: String(data: request.httpBody ?? Data(), encoding: .utf8),
                     code: httpResponse.statusCode,
-                    message: String(data: data, encoding: .utf8) ?? "Error reading server response"
+                    response: String(data: data, encoding: .utf8) ?? "Error reading server response"
                 ))
             }
         }
