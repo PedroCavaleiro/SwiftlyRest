@@ -106,7 +106,11 @@ public class Endpoint: EndpointInterface {
     /// - Throws: `SwiftlyRestError.invalidURL` if the provided URL is not valid
     /// - Returns: The built URL
     public func build() throws -> String {
-        guard URL(string: self.url) != nil else { throw SwiftlyRestError.invalidURL }
+        guard URL(string: self.url) != nil else {
+            throw SwiftlyRestError.invalidURL(
+                self.url
+            )
+        }
         return self.url
     }
     

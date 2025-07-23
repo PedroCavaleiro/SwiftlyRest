@@ -103,9 +103,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO10invalidURLyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/invalidURL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10invalidURLyA2CmF">invalidURL</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO10invalidURLyACSScACmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidURL(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10invalidURLyACSScACmF">invalidURL(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -120,9 +120,28 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidURL</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">invalidURL</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The invalid URL string that caused the error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -130,9 +149,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO10noResponseyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/noResponse" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10noResponseyA2CmF">noResponse</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO10noResponseyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/noResponse(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10noResponseyACSS_SDyS2SGSSSgtcACmF">noResponse(_:<wbr>headers:<wbr>body:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -147,9 +166,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">noResponse</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">noResponse</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -157,9 +219,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO10badRequestyACSS_tcACmF"></a>
-                    <a name="//apple_ref/swift/Element/badRequest(message:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10badRequestyACSS_tcACmF">badRequest(message:<wbr>)</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO10badRequestyACSS_SDyS2SGSSSgSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/badRequest(_:headers:body:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10badRequestyACSS_SDyS2SGSSSgSStcACmF">badRequest(_:<wbr>headers:<wbr>body:<wbr>response:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -174,9 +236,64 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badRequest</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badRequest</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response body from the server, if available.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -184,9 +301,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO12unauthorizedyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/unauthorized" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO12unauthorizedyA2CmF">unauthorized</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO12unauthorizedyACSS_SDyS2SGSSSgSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/unauthorized(_:headers:body:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO12unauthorizedyACSS_SDyS2SGSSSgSStcACmF">unauthorized(_:<wbr>headers:<wbr>body:<wbr>response:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -201,9 +318,64 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unauthorized</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unauthorized</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response body from the server, if available.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -211,9 +383,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO9forbiddenyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/forbidden" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO9forbiddenyA2CmF">forbidden</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO9forbiddenyACSS_SDyS2SGSSSgSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/forbidden(_:headers:body:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO9forbiddenyACSS_SDyS2SGSSSgSStcACmF">forbidden(_:<wbr>headers:<wbr>body:<wbr>response:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,9 +400,64 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">forbidden</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">forbidden</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response body from the server, if available.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -238,9 +465,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO8notFoundyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/notFound" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO8notFoundyA2CmF">notFound</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO8notFoundyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/notFound(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO8notFoundyACSS_SDyS2SGSSSgtcACmF">notFound(_:<wbr>headers:<wbr>body:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -255,9 +482,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">notFound</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">notFound</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -265,9 +535,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO014internalServerC0yA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/internalServerError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO014internalServerC0yA2CmF">internalServerError</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO014internalServerC0yACSS_SDyS2SGSSSgSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/internalServerError(_:headers:body:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO014internalServerC0yACSS_SDyS2SGSSSgSStcACmF">internalServerError(_:<wbr>headers:<wbr>body:<wbr>response:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -282,9 +552,64 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">internalServerError</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">internalServerError</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response body from the server, if available.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -292,9 +617,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO10badGatewayyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/badGateway" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10badGatewayyA2CmF">badGateway</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO10badGatewayyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/badGateway(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO10badGatewayyACSS_SDyS2SGSSSgtcACmF">badGateway(_:<wbr>headers:<wbr>body:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -309,9 +634,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">badGateway</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badGateway</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -319,9 +687,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO18serviceUnavailableyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/serviceUnavailable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO18serviceUnavailableyA2CmF">serviceUnavailable</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO18serviceUnavailableyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/serviceUnavailable(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO18serviceUnavailableyACSS_SDyS2SGSSSgtcACmF">serviceUnavailable(_:<wbr>headers:<wbr>body:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -336,9 +704,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">serviceUnavailable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">serviceUnavailable</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -346,9 +757,79 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO7timeoutyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/timeout" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO7timeoutyA2CmF">timeout</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO7timeoutyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/timeout(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO7timeoutyACSS_SDyS2SGSSSgtcACmF">timeout(_:<wbr>headers:<wbr>body:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The request timed out (408).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">timeout</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO14gatewayTimeoutyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/gatewayTimeout(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO14gatewayTimeoutyACSS_SDyS2SGSSSgtcACmF">gatewayTimeout(_:<wbr>headers:<wbr>body:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -363,9 +844,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">timeout</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">gatewayTimeout</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -373,9 +897,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO24unexpectedResponseFormatyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/unexpectedResponseFormat" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO24unexpectedResponseFormatyA2CmF">unexpectedResponseFormat</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO24unexpectedResponseFormatyACSS_SDyS2SGSSSgSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/unexpectedResponseFormat(_:headers:body:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO24unexpectedResponseFormatyACSS_SDyS2SGSSSgSStcACmF">unexpectedResponseFormat(_:<wbr>headers:<wbr>body:<wbr>response:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -390,9 +914,64 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unexpectedResponseFormat</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unexpectedResponseFormat</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response body from the server, if available.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -400,9 +979,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO7unknownyACSi_SStcACmF"></a>
-                    <a name="//apple_ref/swift/Element/unknown(code:message:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO7unknownyACSi_SStcACmF">unknown(code:<wbr>message:<wbr>)</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO7unknownyACSS_SDyS2SGSSSgSiSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/unknown(_:headers:body:code:response:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO7unknownyACSS_SDyS2SGSSSgSiSStcACmF">unknown(_:<wbr>headers:<wbr>body:<wbr>code:<wbr>response:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -417,9 +996,64 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unknown</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unknown</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response body from the server, if available.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -427,9 +1061,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftlyRest0aB5ErrorO14badRequestBodyyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/badRequestBody" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO14badRequestBodyyA2CmF">badRequestBody</a>
+                    <a name="/s:11SwiftlyRest0aB5ErrorO14badRequestBodyyACSS_SDyS2SGSSSgtcACmF"></a>
+                    <a name="//apple_ref/swift/Element/badRequestBody(_:headers:body:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftlyRest0aB5ErrorO14badRequestBodyyACSS_SDyS2SGSSSgtcACmF">badRequestBody(_:<wbr>headers:<wbr>body:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -444,9 +1078,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">badRequestBody</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">badRequestBody</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL that was requested.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>headers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The headers sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>body</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the request, if any.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -483,7 +1160,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-07-22)</p>
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-07-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

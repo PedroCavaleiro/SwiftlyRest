@@ -1,19 +1,19 @@
 {
-  "originHash" : "709b53c721295460eda95ba9d8b87e7f2337b1638eb1d70b27aa3a213b832732",
+  "originHash" : "971cbb697e6f375152792ea33024b2fd92598464b1767939fe9644a81a612606",
   "pins" : [
     {
       "identity" : "extendedswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PedroCavaleiro/ExtendedSwift",
       "state" : {
-        "revision" : "83995c23187357b1875c316a2b58159c23086596",
-        "version" : "1.2.1"
+        "revision" : "706807aae4a477d2cfc45e6d8c5e53c925ab9242",
+        "version" : "1.2.2"
       }
     },
     {
       "identity" : "keychain-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/evgenyneu/keychain-swift.git",
+      "location" : "https://github.com/evgenyneu/keychain-swift",
       "state" : {
         "revision" : "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
         "version" : "24.0.0"

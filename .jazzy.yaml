@@ -5,3 +5,4 @@ xcodebuild_arguments:
   - "SwiftlyRest"
   - "-destination"
   - "platform=iOS"
+
