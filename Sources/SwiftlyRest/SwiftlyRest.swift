@@ -166,16 +166,41 @@ public enum RetryableCodes: Int, Equatable {
 @available(macOS 12.0, *)
 public class SwiftlyRest: SwiftlyRestInterface {
     
+    /// Singleton for SwiftlyRest if needed you can use the `init`
     @MainActor public static let shared = SwiftlyRest()
     
     private var baseURL: URL?
     private var loggingEnabled: Bool = false
-    private let tag: String = "[SwiftlyRest]"
+    private var tag: String = "[SwiftlyRest]"
     private var apiAuthConfiguration: ApiAuthenticationInterface?
     private var jwtToken: String?
     private var contentTypeHeader: String = "application/json"
     
     private init() {}
+    
+    /// Initializer to use SwiftlyRest as a single instance instead of a singleton
+    /// - Parameters:
+    ///   - baseURL: The base URL of the server
+    ///   - loggingEnabled: When true it logs all requests in a detailed manner (including successfull requests)
+    ///   - tag: Tag to idenfiy the logs
+    ///   - apiAuthConfiguration: The API Configuration system
+    ///   - jwtToken: The JWT token for the authentication
+    ///   - contentTypeHeader: The content type header (recommended application/json)
+    public init(
+        baseURL: URL? = nil,
+        loggingEnabled: Bool = false,
+        tag: String = "[SwiftlyRest]",
+        apiAuthConfiguration: ApiAuthenticationInterface? = nil,
+        jwtToken: String? = nil,
+        contentTypeHeader: String = "application/json"
+    ) {
+        self.baseURL = baseURL
+        self.loggingEnabled = loggingEnabled
+        self.tag = tag
+        self.apiAuthConfiguration = apiAuthConfiguration
+        self.jwtToken = jwtToken
+        self.contentTypeHeader = contentTypeHeader
+    }
     
     /// Sets the content type header
     ///
