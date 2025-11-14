@@ -285,7 +285,25 @@ public class SwiftlyRest: SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
-        return await makeRequest(endpoint: endpoint, method: .get, body: Optional<Data>.none, responseType: T.self, headers: headers)
+        var rh: [String: String] = [:]
+        return await makeRequest(endpoint: endpoint, method: .get, body: Optional<Data>.none, responseType: T.self, headers: headers, responseHeaders: &rh)
+    }
+    
+    /// Performs a HTTP GET request
+    ///
+    /// - Parameters:
+    ///  - endpoint: The endpoint where to perform the request
+    ///  - headers: Extra headers to send to the server
+    ///  - responseHeaders: The headers in the response, this is a `inout` variable
+    ///  - T: The type of the response, this will be used to parse from the server
+    /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
+    public func get<T: Codable>(
+        _ endpoint: EndpointInterface,
+        headers: [String: String] = [:],
+        responseHeaders: inout [String: String]
+    ) async -> Result<T, SwiftlyRestError> {
+        return await makeRequest(endpoint: endpoint, method: .get, body: Optional<Data>.none, responseType: T.self, headers: headers, responseHeaders: &responseHeaders)
     }
     
     /// Performs a HTTP POST request
@@ -303,7 +321,28 @@ public class SwiftlyRest: SwiftlyRestInterface {
         body: U? = nil,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
-        return await makeRequest(endpoint: endpoint, method: .post, body: body, responseType: T.self, headers: headers)
+        var rh: [String: String] = [:]
+        return await makeRequest(endpoint: endpoint, method: .post, body: body, responseType: T.self, headers: headers, responseHeaders: &rh)
+    }
+    
+    /// Performs a HTTP POST request
+    ///
+    /// - Parameters:
+    ///  - endpoint: The endpoint where to perform the request
+    ///  - body: The request body to send to the server
+    ///  - headers: Extra headers to send to the server
+    ///  - responseHeaders: The headers in the response, this is a `inout` variable
+    ///  - T: The type of the response, this will be used to parse from the server
+    ///  - U: The type of the body
+    /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
+    public func post<T: Codable, U: Codable>(
+        _ endpoint: EndpointInterface,
+        body: U? = nil,
+        headers: [String: String] = [:],
+        responseHeaders: inout [String: String]
+    ) async -> Result<T, SwiftlyRestError> {
+        return await makeRequest(endpoint: endpoint, method: .post, body: body, responseType: T.self, headers: headers, responseHeaders: &responseHeaders)
     }
     
     /// Performs a HTTP PATCH request
@@ -321,7 +360,28 @@ public class SwiftlyRest: SwiftlyRestInterface {
         body: U? = nil,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
-        return await makeRequest(endpoint: endpoint, method: .patch, body: body, responseType: T.self, headers: headers)
+        var rh: [String: String] = [:]
+        return await makeRequest(endpoint: endpoint, method: .patch, body: body, responseType: T.self, headers: headers, responseHeaders: &rh)
+    }
+    
+    /// Performs a HTTP PATCH request
+    ///
+    /// - Parameters:
+    ///  - endpoint: The endpoint where to perform the request
+    ///  - body: The request body to send to the server
+    ///  - headers: Extra headers to send to the server
+    ///  - responseHeaders: The headers in the response, this is a `inout` variable
+    ///  - T: The type of the response, this will be used to parse from the server
+    ///  - U: The type of the body
+    /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
+    public func patch<T: Codable, U: Codable>(
+        _ endpoint: EndpointInterface,
+        body: U? = nil,
+        headers: [String: String] = [:],
+        responseHeaders: inout [String: String]
+    ) async -> Result<T, SwiftlyRestError> {
+        return await makeRequest(endpoint: endpoint, method: .patch, body: body, responseType: T.self, headers: headers, responseHeaders: &responseHeaders)
     }
     
     /// Performs a HTTP PUT request
@@ -339,7 +399,28 @@ public class SwiftlyRest: SwiftlyRestInterface {
         body: U? = nil,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
-        return await makeRequest(endpoint: endpoint, method: .put, body: body, responseType: T.self, headers: headers)
+        var rh: [String: String] = [:]
+        return await makeRequest(endpoint: endpoint, method: .put, body: body, responseType: T.self, headers: headers, responseHeaders: &rh)
+    }
+    
+    /// Performs a HTTP PUT request
+    ///
+    /// - Parameters:
+    ///  - endpoint: The endpoint where to perform the request
+    ///  - body: The request body to send to the server
+    ///  - headers: Extra headers to send to the server
+    ///  - responseHeaders: The headers in the response, this is a `inout` variable
+    ///  - T: The type of the response, this will be used to parse from the server
+    ///  - U: The type of the body
+    /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
+    public func put<T: Codable, U: Codable>(
+        _ endpoint: EndpointInterface,
+        body: U? = nil,
+        headers: [String: String] = [:],
+        responseHeaders: inout [String: String]
+    ) async -> Result<T, SwiftlyRestError> {
+        return await makeRequest(endpoint: endpoint, method: .put, body: body, responseType: T.self, headers: headers, responseHeaders: &responseHeaders)
     }
     
     /// Performs a HTTP DELETE request
@@ -354,7 +435,25 @@ public class SwiftlyRest: SwiftlyRestInterface {
         _ endpoint: EndpointInterface,
         headers: [String: String] = [:]
     ) async -> Result<T, SwiftlyRestError> {
-        return await makeRequest(endpoint: endpoint, method: .delete, body: Optional<Data>.none, responseType: T.self, headers: headers)
+        var rh: [String: String] = [:]
+        return await makeRequest(endpoint: endpoint, method: .delete, body: Optional<Data>.none, responseType: T.self, headers: headers, responseHeaders: &rh)
+    }
+    
+    /// Performs a HTTP DELETE request
+    ///
+    /// - Parameters:
+    ///  - endpoint: The endpoint where to perform the request
+    ///  - headers: Extra headers to send to the server
+    ///  - responseHeaders: The headers in the response, this is a `inout` variable
+    ///  - T: The type of the response, this will be used to parse from the server
+    /// - Returns: `awaitable` `Result<T, SwiftlyRestError>` Where the .success contains the parsed response or a `SwiftlyRestError`
+    @available(iOS 15.0, *)
+    public func delete<T: Codable>(
+        _ endpoint: EndpointInterface,
+        headers: [String: String] = [:],
+        responseHeaders: inout [String: String]
+    ) async -> Result<T, SwiftlyRestError> {
+        return await makeRequest(endpoint: endpoint, method: .delete, body: Optional<Data>.none, responseType: T.self, headers: headers, responseHeaders: &responseHeaders)
     }
     
     /// Generates the headers for a request
@@ -387,13 +486,15 @@ public class SwiftlyRest: SwiftlyRestInterface {
     ///  - body: The body of the request, can be nil
     ///  - responseType: The type of the response to parse from the server response
     ///  - headers: The extra headers to send to the server
+    ///  - responseHeaders: The headers in the response, this is a `inout` variable
     @available(iOS 15.0, *)
     private func makeRequest<T: Codable, U: Codable>(
         endpoint: EndpointInterface,
         method: HTTPMethod,
         body: U? = nil,
         responseType: T.Type,
-        headers: [String: String] = [:]
+        headers: [String: String] = [:],
+        responseHeaders: inout [String: String]
     ) async -> Result<T, SwiftlyRestError> {
         
         guard let endpointUrl = try? endpoint.build() else {
@@ -464,6 +565,10 @@ public class SwiftlyRest: SwiftlyRestInterface {
         }
         
         writeLog("\(tag)[response] Server Response: \(String(data: data, encoding: .utf8) ?? "Error parsing data")")
+        
+        responseHeaders = httpResponse.allHeaderFields.reduce(into: [:]) { (result, element) in
+            result[element.key as! String] = element.value as? String
+        }
         
         if (200...299).contains(httpResponse.statusCode) {
             let decoder = JSONDecoder()
