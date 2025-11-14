@@ -71,6 +71,14 @@ case .failure(let error):
 }
 ```
 
+### Get the response headers
+
+To any method just add the following
+```swift
+var rh [String: String] = [:]
+let result = await rest.get(endpoint, responseHeaders: &rh)
+```
+
 ## Error Handling
 All requests return a `Result<T, SwiftlyRestError>`. See `SwiftlyRestError` for all error cases, including retryable codes in `RetryableCodes`.
 
